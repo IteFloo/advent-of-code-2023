@@ -4,6 +4,8 @@ class Card {
         this.cardNumber = cardNumber;
         this.winningNumbers = winningNumbers;
         this.numbers = numbers;
+        this.process = 0;
+        this.numberOfCopy = 1;
     }
 
     getWinningNumbers() {
@@ -21,6 +23,20 @@ class Card {
         }
 
         return Math.pow(2, winningNumbers.length - 1);
+    }
+
+    getCardIdsToCopy() {
+        let cardIds = [];
+        for (let c = 1; c <= this.numberOfCopy; c++) {
+            for (let i = 1; i <= this.getWinningNumbers().length; i++) {
+                cardIds.push(this.cardNumber + i);
+            }
+        }
+        return R.countBy(Math.floor)(cardIds);
+    }
+
+    addCopies(number) {
+        this.numberOfCopy = this.numberOfCopy + number
     }
 }
 
