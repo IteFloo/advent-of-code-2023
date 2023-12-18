@@ -32,7 +32,6 @@ describe('Day three', () => {
     test('can extract number from line', () => {
         let numberFromLine = Gondola.extractNumberFromLine('..35..633.');
         expect(numberFromLine.length).toBe(2);
-        console.log(numberFromLine);
     });
     test('can get number tounchingCoordonate', () => {
         let number = {

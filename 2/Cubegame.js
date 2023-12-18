@@ -33,7 +33,6 @@ class Cubegame {
     }
 
     static getGamePower(gameline) {
-        console.log(this.extractGameNumber(gameline))
         let tirages = this.getGameTirage(gameline);
         let minimunSetPower = {
             blue:0,
@@ -54,7 +53,6 @@ class Cubegame {
                 minimunSetPower.green = colorNumber.green;
             }
         })
-        console.log(minimunSetPower)
         return minimunSetPower.red * minimunSetPower.green * minimunSetPower.blue;
 
     }
